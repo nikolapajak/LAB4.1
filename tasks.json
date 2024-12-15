@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build pipes2",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17",
+                "${fileDirname}/pipes2.cpp",
+                "-o",
+                "${fileDirname}/pipes2"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build C++ program with g++."
+        },
+        {
+            "label": "Run pipes2",
+            "type": "shell",
+            "command": "${fileDirname}/pipes2",
+            "dependsOn": "Build pipes2",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
